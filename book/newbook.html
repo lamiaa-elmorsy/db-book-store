@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Add New Book</title>
+	</head>
+	<body>
+	<table>
+		<form action="newbook.php" method="post">
+			<tr><td> Book Title: </td><td> <input type="text" name="title"></td></tr>
+			<tr><td>Author Name: </td><td> <input type="text" name="author"></td></tr>
+			<tr><td>Publisher: </td><td> <input type="text" name="publisher"></td></tr>
+			<tr><td>Publication Year: </td><td> <input type="text" name="pub_year"></td></tr>
+			<tr><td>Selling Price: </td><td> <input type="text" name="selling_price"></td></tr>
+			<tr><td>Category: </td><td>
+			<select name="category">
+				<option value="science"> Science </option>
+				<option value="history"> History </option>
+				<option value="geography"> Geography </option>
+				<option value="religion"> Religion </option>
+				<option value="art"> Art </option>
+			</select></td></tr>
+			<tr><td>Quantity in Stock: </td><td> <input type="text" name="quantity_in_stock"></td></tr>
+			<tr><td></td><td><input type="submit" value="Add Book"> 
+			<input type="reset"></td></tr>
+		</form>
+	</table>
+	</body>
+</html>
