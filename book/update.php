@@ -50,9 +50,29 @@
 		<script type="text/javascript">
 			function validate(){
 			    if(document.getElementById('title').value.length == 0){
-			            var htmlString="<?php echo $category; ?>";
- 					    alert(htmlString)
-			            // alert('<?php echo $title?>')
+			            var title="<?php echo $title; ?>";
+			            document.getElementById('title').value = title
+ 					    // alert(htmlString)
+			        }
+   			    if(document.getElementById('author').value.length == 0){
+			            var author="<?php echo $author; ?>";
+			            document.getElementById('author').value = author
+			        }
+			    if(document.getElementById('publisher').value.length == 0){
+			            var publisher="<?php echo $publisher; ?>";
+			            document.getElementById('publisher').value = publisher
+			        }
+   			    if(document.getElementById('pub_year').value.length == 0){
+			            var pub_year="<?php echo $pub_year; ?>";
+			            document.getElementById('pub_year').value = pub_year
+			        }
+			    if(document.getElementById('selling_price').value.length == 0){
+			            var selling_price="<?php echo $selling_price; ?>";
+			            document.getElementById('selling_price').value = selling_price
+			        }
+   			    if(document.getElementById('category').value.length == 0){
+			            var category="<?php echo $category; ?>";
+			            document.getElementById('category').value = category
 			        }
 			}
 
@@ -63,12 +83,12 @@
 	<table>
 		<form action="update_query.php" method="post" onsubmit="validate()">
 			<tr><td> Book Title: </td><td> <input type="text" id="title" name="title" placeholder='<?php echo $title; ?>'></td></tr>
-			<tr><td>Author Name: </td><td> <input type="text" name="author" placeholder='<?php echo $author; ?>'></td></tr>
-			<tr><td>Publisher: </td><td> <input type="text" name="publisher" placeholder='<?php echo $$publisher; ?>'></td></tr>
-			<tr><td>Publication Year: </td><td> <input type="text" name="pub_year" placeholder='<?php echo $pub_year; ?>'></td></tr>
-			<tr><td>Selling Price: </td><td> <input type="text" name="selling_price" placeholder='<?php echo $selling_price; ?>'></td></tr>
+			<tr><td>Author Name: </td><td> <input type="text" id ="author" name="author" placeholder='<?php echo $author; ?>'></td></tr>
+			<tr><td>Publisher: </td><td> <input type="text" id="publisher" name="publisher" placeholder='<?php echo $$publisher; ?>'></td></tr>
+			<tr><td>Publication Year: </td><td> <input type="text" id="pub_year" name="pub_year" placeholder='<?php echo $pub_year; ?>'></td></tr>
+			<tr><td>Selling Price: </td><td> <input type="text" id="selling_price" name="selling_price" placeholder='<?php echo $selling_price; ?>'></td></tr>
 			<tr><td>Category: </td><td>
-			<select name="category" placeholder='<?php echo $category; ?>'>
+			<select id="category" name="category" placeholder='<?php echo $category; ?>'>
 				<option value="science"> Science </option>
 				<option value="history"> History </option>
 				<option value="geography"> Geography </option>
