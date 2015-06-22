@@ -26,10 +26,12 @@
 			VALUES ('".$book_id."', '".$_POST['quantity_in_stock']."')" ;
 
 	if (mysqli_query($connection, $sql)){
-		echo "New Book Quantity Has Been Added Successfully to book_copies table"."<br>";
+		// echo "New Book Quantity Has Been Added Successfully to book_copies table"."<br>";
+		header('Location: viewbook.php?id='.$book_id);
 	}else{
 		echo "Error: ".$sql."<br>".mysqli_error($connection);
 	}
+
 
 
 	mysqli_close($connection);

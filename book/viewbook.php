@@ -14,9 +14,14 @@ if (!$connection){
 }else{
 	// echo "Connected Successfully"."<br>";
 }
-
+if (isset($_GET['id'])){
+	$id = $_GET['id'];
+}
+else{
+	$id = $_POST['book_id'];
+}
 //Select all from db
-$sql = "SELECT * FROM book WHERE id='".$_POST['book_id']."'" ;
+$sql = "SELECT * FROM book WHERE id='".$id."'" ;
 $result = mysqli_query($connection, $sql);
 
 if (mysqli_num_rows($result) > 0){
@@ -53,7 +58,10 @@ mysqli_close($connection);
 <form action="update.php" method="post">
 	<input type="hidden" name="book_id" value="<?php echo $book_id; ?>">
 	<input type="submit" value="Edit">
+</form>
 
+<form action="index.php" method="post"> 
+	<input type="submit" value="Back">
 </form>
 
 </body>
